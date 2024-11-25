@@ -16,10 +16,11 @@ int get_rand(){
 }
 int main()
 {
-    // pid_t p1;
-    // p1 = fork();
+    pid_t p1;
+    pid_t p2;
+    p1 = fork();
     int r = -1;
-    // pid_t p2 = fork();
+    pid_t p2 = fork();
 
-    printf("%d\n",r);
+    
 }
