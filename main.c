@@ -28,9 +28,9 @@ int main()
         exit(1);
     }
     else if(p1==0||p2==0){
-        int t1 = get_rand();
-        printf("%d %dsec",getpid(),t1);
-        waitpid(getpid(),&t1,0);
+        // int t1 = get_rand();
+        printf("%d %dsec\n\n",getpid(),5);
+        // sleep(t1);
     }
     else{
         printf("%d about to create 2 child process",getpid());
