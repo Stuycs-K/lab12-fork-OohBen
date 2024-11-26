@@ -42,7 +42,7 @@ int main()
     }
     else if(p1==0||p2==0){
         // int t1 = get_rand();
-        printf("%d %dsec\n\n",getpid(),5);
+        printf("%d %dsec\n\n",getpid(),get_rand());
         // sleep(t1);
     }
     else{
