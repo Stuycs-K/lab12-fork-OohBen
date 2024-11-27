@@ -27,7 +27,6 @@ int main()
     // perror("hello\n");
     // ((p1=fork())&&(p2=fork()));
     p1=fork();
-    // p2=fork();
     if(p1){
         p2=fork();
     }
@@ -42,13 +41,18 @@ int main()
     }
     else if(p1==0||p2==0){
         // int t1 = get_rand();
-        printf("%d %dsec\n\n",getpid(),get_rand());
-        // sleep(t1);
+        int sleep_time = get_rand();
+        printf("%d %dsec\n",getpid(),sleep_time);
+        sleep(sleep_time);
+        printf("%d finished after %dsec\n", getpid(), sleep_time);
+        exit(sleep_time);  
     }
     else{
         printf("%d about to create 2 child process\n",getpid());
-
+        int status;
+        pid_t done_pid = wait(&status);
+        int sleep_time = WEXITSTATUS(status);
+        printf("Main Process %d is done. Child %d slept for %dsec\n", getpid(), done_pid, sleep_time);
     }
-
-    
+    return 0;
 }

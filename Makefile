@@ -2,7 +2,6 @@
 
 run: main
 	@./main
-	@echo done 
 
 compile: main
 
